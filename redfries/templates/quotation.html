@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div class="mt-4 p-5 bg-dark text-white rounded ftext">
+    <h3 class="text-center">A share of {{ name }}. {{ symbol }}</h3>
+    <h3 class="text-center">current price {{ price }}.</h3>
+</div>
+{% endblock %}

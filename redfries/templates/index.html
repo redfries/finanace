@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Finance
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+    <table class="table table-striped table-hover" id="table1">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares Owned</th>
+                <th class="text-end">Current Price</th>
+                <th class="text-end">Total Value</th>
+            </tr>
+            {% for row in transactions %}
+            <tr>
+                <td class="text-start">{{ row["symbol"] }}</td>
+                <td class="text-start">{{ row["name"] }}</td>
+                <td class="text-end">{{ row["share"] }}</td>
+                <td class="text-end">{{ row["price"] }}</td>
+                <td class="text-end">{{ row["total"] }}</td>
+            </tr>
+            {% endfor %}
+
+        </thead>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">{{ cash }}</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">{{ total }}</td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}
